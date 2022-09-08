@@ -1,0 +1,14 @@
+SELF JOIN
+Select a.customername AS Customername1,b.customername2, a.city from customers a, customers b
+
+where a.customerid <> b.customerid
+and a.city=b.city
+order by a.city;
+
+To find the highest salary from employee
+USE
+SELECT * FROM employee 
+WHERE salary= (SELECT DISTINCT(salary) 
+FROM employee ORDER BY salary LIMIT n-1,1);
+
+The SQL LIMIT statement restricts how many rows a query returns. A LIMIT statement appears at the end of a query, after any ORDER BY statements. You can start a LIMIT statement at a particular row using the offset argument. ... Limit allows you to limit the number of records a query to a certain amount.
